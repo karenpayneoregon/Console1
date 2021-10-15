@@ -2,7 +2,6 @@ bin/Debug/net6.0/Console1.deps.json
 bin/Debug/net6.0/Console1.dll
 bin/Debug/net6.0/Console1.exe
 bin/Debug/net6.0/Console1.pdb
-bin/Debug/net6.0/GenFu.dll
 bin/Debug/net6.0/Console1.runtimeconfig.json
 bin/Debug/net6.0/ref/Console1.dll
 obj/Console1.csproj.nuget.dgspec.json
@@ -25,3 +24,4 @@ obj/Debug/net6.0/Console1.GlobalUsings.g.cs
 obj/Debug/net6.0/Console1.pdb
 obj/Debug/net6.0/ref/Console1.dll
 obj/Debug/net6.0/Console1.csproj.CopyComplete
+.gitignore
