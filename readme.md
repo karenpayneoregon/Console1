@@ -4,6 +4,12 @@
 
 [GenFu](https://github.com/MisterJames/GenFu)
 
+### Other examples
+
+- [DateOnly](https://docs.microsoft.com/en-us/dotnet/api/system.dateonly?view=net-6.0)
+- [TimeOnly](https://docs.microsoft.com/en-us/dotnet/api/system.timeonly?view=net-6.0)
+
+
 ### Installation options
 
 ```
