@@ -1,32 +1,44 @@
 ﻿/*
-    Example using an NuGet package to create random data.
-        This package was difficult to install because of OED security but I found a way around this :-)
-
-    This project is using .NET 6 which requires the SDK to be installed.
-
-    Notes
-        1. No namespace, this is .net 6
+    Example using an NuGet package to create random data.  This package was difficult to install because of OED security but I found a way around this :-)
+    .NET 6 which requires the SDK to be installed.
+    No namespace, this is .net 6
 */
 
-using System;
+
 using GenFu;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using GenFu.ValueGenerators.Temporal;
-using System.Runtime.CompilerServices;
+// using System.Text.RegularExpressions;
+// using GenFu.ValueGenerators.Temporal;
+// using System.Runtime.CompilerServices;
 using static System.Console;
 
-//Chunking();
+
+Chunking();
 DateOnlyExample();
+TupleSample();
+
+
+static void TupleSample()
+{
+
+    SetForColor(nameof(TupleSample));
+
+    var person = new Person("Karen", "Payne");
+
+        // Deconstruct the person object.
+        var (firstName, lastName, city, state) = person;
+        Console.WriteLine($"Hello {firstName} {lastName}");
+}
 
 static void Chunking()
 {
-    A.Configure<Person>()
+    SetForColor(nameof(Chunking));
+    WriteLine("");
+
+    A.Configure<Person1>()
         .Fill(p => p.Age)
         .WithinRange(19, 25);
 
-        List<Person> people = A.ListOf<Person>();
+        List<Person1> people = A.ListOf<Person1>();
 
         int index = 0;
 
@@ -45,6 +57,8 @@ static void Chunking()
 
             index += 1;
         }
+
+    WriteLine("");
 }
 
 /*
@@ -52,12 +66,35 @@ static void Chunking()
 */
 static void DateOnlyExample()
 {
-    
+
+    SetForColor(nameof(DateOnlyExample));
+
     DateOnly currentDate = DateOnly.FromDateTime(DateTime.Now);
+    
     WriteLine(currentDate);
+    WriteLine($"Month: {currentDate.Month}");
+    WriteLine($"Day: {currentDate.Day}");
+    WriteLine("");
+
+    SetForColor("DateTime");
     WriteLine(DateTime.Now);
+    WriteLine("");
+
+    SetForColor("TimeOnly");
     var currentTime = TimeOnly.FromDateTime(DateTime.Now);
     WriteLine(currentTime);
+    WriteLine($"Hour: {currentTime.Hour}");
+    WriteLine($"Minutes: {currentTime.Minute}");
+
+    WriteLine("");
+
 }
 
+static void SetForColor(string sender)
+{
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    WriteLine(sender);
+    Console.ResetColor();
+
+}
 
