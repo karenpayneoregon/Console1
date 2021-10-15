@@ -29,3 +29,8 @@ Install-Package GenFu
 ### .NET CLI
 
 https://docs.microsoft.com/en-us/dotnet/core/tools/
+
+### What's new in C# 10.0
+
+:small_blue_diamond: [Docs](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-10)
+

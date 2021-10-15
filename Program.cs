@@ -5,13 +5,21 @@
 */
 
 
+using System.Text.Json.Nodes;
 using GenFu;
 using static System.Console;
 
+const string languageReleasePrefix = "C# 10";
+const string languageRelease = $"{languageReleasePrefix} to be released in November 2021.";
 
 Chunking();
 DateOnlyExample();
 TupleSample();
+WriteLine("");
+SetForColor("Main");
+WriteLine(languageRelease);
+WriteLine("");
+
 
 
 static void TupleSample()
@@ -22,7 +30,7 @@ static void TupleSample()
     var person = new Person("Karen", "Payne");
 
         // Deconstruct the person object.
-        var (firstName, lastName, city, state) = person;
+        var (firstName, lastName, _ , _ ) = person;
         Console.WriteLine($"Hello {firstName} {lastName}");
 }
 
